@@ -1,7 +1,7 @@
 #ifndef XINMJ_BASE_COPYABLE_H
 #define XINMJ_BASE_COPYABLE_H
 
-namespace xinmj
+namespace xmj
 {
     class copyable{
         protected:
