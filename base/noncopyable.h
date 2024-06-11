@@ -1,7 +1,7 @@
 #ifndef XINMJ_BASE_NONCOPYABLE_H
 #define XINMJ_BASE_NONCOPYABLE_H
 
-namespace xinmj
+namespace xmj
 {
     /*
     *   it can be moved but can't be copied.
@@ -15,5 +15,5 @@ namespace xinmj
         noncopyable() = default;
         ~noncopyable() = default;
     };
-} // namespace xinmj
+} // namespace xmj
 #endif//!XINMJ_BASE_NONCOPYABLE_H
