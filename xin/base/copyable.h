@@ -1,12 +1,12 @@
 #ifndef XINMJ_BASE_COPYABLE_H
 #define XINMJ_BASE_COPYABLE_H
 
-namespace xmj
+namespace xin
 {
     class copyable{
         protected:
         copyable() = default;
         ~copyable() = default;
     };
-} // namespace xinmj
+} // namespace xin
 #endif//!XINMJ_BASE_COPYABLE_H
