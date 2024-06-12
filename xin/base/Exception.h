@@ -12,7 +12,7 @@ namespace xin
     public:
         explicit Exception(const char *e);
         explicit Exception(const std::string &e);
-        ~Exception() throw();
+        virtual ~Exception() throw();
         virtual const char *what() const throw();
         const char *stackTrace() const throw();
 
