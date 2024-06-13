@@ -25,7 +25,7 @@ INC			= $(XIN_INC)
 LIB			= $(XIN_LIB)
 
 XINLIB		= libxin_base.a
-BIN			= Exception_test
+BIN			= Thread_test
 
 all: debug release
 
@@ -50,6 +50,9 @@ $(LIB_DIR)/libxin_base.a:$(addprefix $(OBJ_DIR)/,Thread.o Exception.o)
 $(BIN_DIR)/Exception_test:$(addprefix $(OBJ_DIR)/,Exception_test.o)
 	$(CXX) $(CXXFLAGS) $(CXX_MACRO) -o $@ $^ $(LIB)
 
+$(BIN_DIR)/Thread_test:$(addprefix $(OBJ_DIR)/,Thread_test.o)
+	$(CXX) $(CXXFLAGS) $(CXX_MACRO) -o $@ $^ $(LIB)
+
 strip:
 	strip $(addprefix $(BIN_DIR)/,$(BIN))
 
@@ -58,5 +61,5 @@ clean:
 	rm -rf $(BIN_DIR)
 	rm -rf $(OBJ_DIR)
 
-exception:
-	gdb ./bin/Exception_test
+test:
+	gdb $(addprefix $(BIN_DIR)/,$(BIN))

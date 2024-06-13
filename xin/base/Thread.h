@@ -7,6 +7,7 @@
 #include <functional>
 #include <error.h>
 #include <memory>
+#include <string>
 #include <pthread.h>
 
 namespace xin
