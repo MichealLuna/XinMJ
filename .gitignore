@@ -1,1 +1,4 @@
 .vscode
+./xin/base/test/bin
+./xin/base/test/lib
+./xin/base/test/obj
