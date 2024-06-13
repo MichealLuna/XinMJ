@@ -25,7 +25,7 @@ INC			= $(XIN_INC)
 LIB			= $(XIN_LIB)
 
 XINLIB		= libxin_base.a
-BIN			= Thread_test
+BIN			= Timestamp_test
 
 all: debug release
 
@@ -44,13 +44,16 @@ $(OBJ_DIR)/%.o:$(SRC_DIR)/%.cc
 $(OBJ_DIR)/%.o:$(BASE_DIR)/xin/base/%.cc
 	$(CXX) $(CXXFLAGS) $(CXX_MACRO) -o $@ $(INC) -c $<
 
-$(LIB_DIR)/libxin_base.a:$(addprefix $(OBJ_DIR)/,Thread.o Exception.o)
+$(LIB_DIR)/libxin_base.a:$(addprefix $(OBJ_DIR)/,Thread.o Exception.o Timestamp.o)
 	$(AR) $(AR_FLAGS) $@ $^
 
 $(BIN_DIR)/Exception_test:$(addprefix $(OBJ_DIR)/,Exception_test.o)
 	$(CXX) $(CXXFLAGS) $(CXX_MACRO) -o $@ $^ $(LIB)
 
 $(BIN_DIR)/Thread_test:$(addprefix $(OBJ_DIR)/,Thread_test.o)
+	$(CXX) $(CXXFLAGS) $(CXX_MACRO) -o $@ $^ $(LIB)
+
+$(BIN_DIR)/Timestamp_test:$(addprefix $(OBJ_DIR)/,Timestamp_test.o)
 	$(CXX) $(CXXFLAGS) $(CXX_MACRO) -o $@ $^ $(LIB)
 
 strip:
