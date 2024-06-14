@@ -25,7 +25,7 @@ INC			= $(XIN_INC)
 LIB			= $(XIN_LIB)
 
 XINLIB		= libxin_base.a
-BIN			= Timestamp_test
+BIN			= Mutex_test
 
 all: debug release
 
@@ -48,6 +48,9 @@ $(LIB_DIR)/libxin_base.a:$(addprefix $(OBJ_DIR)/,Thread.o Exception.o Timestamp.
 	$(AR) $(AR_FLAGS) $@ $^
 
 $(BIN_DIR)/Exception_test:$(addprefix $(OBJ_DIR)/,Exception_test.o)
+	$(CXX) $(CXXFLAGS) $(CXX_MACRO) -o $@ $^ $(LIB)
+
+$(BIN_DIR)/Mutex_test:$(addprefix $(OBJ_DIR)/,Mutex_test.o)
 	$(CXX) $(CXXFLAGS) $(CXX_MACRO) -o $@ $^ $(LIB)
 
 $(BIN_DIR)/Thread_test:$(addprefix $(OBJ_DIR)/,Thread_test.o)
