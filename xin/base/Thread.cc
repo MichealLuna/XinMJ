@@ -204,7 +204,7 @@ int Thread::join()
 {
     assert(!joined_);
     assert(started_);
-    joined_ = false;
+    joined_ = true;
     return pthread_join(pthreadId_,NULL);
 }
 
