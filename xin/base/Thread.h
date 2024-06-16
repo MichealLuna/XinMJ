@@ -28,7 +28,7 @@ namespace xin
             
             bool started() const { return started_; }
             pid_t tid() const { return *tid_; }
-            const std::string& name() const { return name_; }
+            const string& name() const { return name_; }
 
             static int numCreated() { return numCreated_; }
 
@@ -41,7 +41,7 @@ namespace xin
             //using shared_ptr for thread-safety
             std::shared_ptr<pid_t> tid_;
             ThreadFunc  func_;
-            std::string name_;
+            string name_;
 
             static std::atomic<int32_t> numCreated_;
     };

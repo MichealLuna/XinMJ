@@ -56,11 +56,11 @@ struct ThreadData
 {
     typedef xin::Thread::ThreadFunc ThreadFunc;
     ThreadFunc func_;
-    std::string name_;
+    string name_;
     std::weak_ptr<pid_t> wkTid_;
 
     ThreadData(const ThreadFunc& func,
-               const std::string& name,
+               const string& name,
                const std::shared_ptr<pid_t>& tid)
      : func_(func),
        name_(name),
@@ -147,7 +147,7 @@ void CurrentThread::sleepUsec(int64_t usec)
 
 std::atomic<int32_t> Thread::numCreated_;
 
-Thread::Thread(const ThreadFunc &func, const std::string &name)
+Thread::Thread(const ThreadFunc &func, const string &name)
   : started_(false),
     joined_(false),
     pthreadId_(0),
@@ -158,7 +158,7 @@ Thread::Thread(const ThreadFunc &func, const std::string &name)
     setDefaultName();
 }
 
-Thread::Thread(ThreadFunc &&func, const std::string &name)
+Thread::Thread(ThreadFunc &&func, const string &name)
   : started_(false),
     joined_(false),
     pthreadId_(0),
