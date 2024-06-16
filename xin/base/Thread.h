@@ -2,6 +2,7 @@
 #define XINMJ_BASE_THREAD_H
 
 #include <xin/base/noncopyable.h>
+#include <xin/base/Types.h>
 
 #include <atomic>
 #include <functional>
@@ -18,8 +19,8 @@ namespace xin
             typedef std::function<void()> ThreadFunc;
 
         public:
-            explicit Thread(const ThreadFunc&,const std::string& name = std::string());
-            explicit Thread(ThreadFunc&&,const std::string& name = std::string());
+            explicit Thread(const ThreadFunc&,const string& name = string());
+            explicit Thread(ThreadFunc&&,const string& name = string());
             ~Thread();
 
             void start();
