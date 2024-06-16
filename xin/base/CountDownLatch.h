@@ -3,7 +3,7 @@
 
 #include <xin/base/Condition.h>
 #include <xin/base/Mutex.h>
-#include <noncopyable.h>
+#include <xin/base/noncopyable.h>
 
 using namespace xin;
 
