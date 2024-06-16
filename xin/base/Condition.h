@@ -2,7 +2,7 @@
 #define XINMJ_BASE_CONDITION_H
 
 #include <xin/base/noncopyable.h>
-#include <Mutex.h>
+#include <xin/base/Mutex.h>
 
 namespace xin
 {
