@@ -30,7 +30,7 @@ class Condition : public noncopyable
   //return true if time out,otherwise false.
   bool waitForSeconds(double seconds);
 
-  void nontify()
+  void notify()
   {
     XCHECK(pthread_cond_signal(&cond_));
   }
