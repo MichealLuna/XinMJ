@@ -1,8 +1,10 @@
 #include <xin/base/ThreadPool.h>
 
+#include <algorithm>
+
 using namespace xin;
 
-explicit ThreadPool::ThreadPool(const string& name)
+ThreadPool::ThreadPool(const string& name)
  : name_(name),
  running_(false),
  nThreads(0),
@@ -43,11 +45,13 @@ void ThreadPool::stop()
   {
     MutexLockGuard lock(mtx_);
     running_ = false;
-    notEmpty_.notify();
+    notEmpty_.notifyAll();
   }
 
-  for(auto it = threads_.begin(); it != threads_.end(); ++it)
-    (*it)->join();
+  // for(auto it = threads_.begin(); it != threads_.end(); ++it)
+  //   (*it)->join();
+  std::for_each(threads_.begin(),threads_.end(),
+    std::bind(&Thread::join,std::placeholders::_1));
 }
 
 
@@ -117,7 +121,7 @@ void ThreadPool::runInThread()
         Task task(take());
         if(task)
         {
-            task();
+          task();
         }
     }
   }
