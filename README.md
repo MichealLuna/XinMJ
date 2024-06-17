@@ -2,9 +2,7 @@
 ## Self Library for Linux
 1. directories location:
 > xin
-
 >> -net
-
 >> -base
 
 2. self-namespace xin
