@@ -2,8 +2,10 @@
 ## Self Library for Linux
 1. directories location:
 > xin
+
+>> -net
+
 >> -base
-    >> -net
 
 2. self-namespace xin
 3. self-macro name XINMJ
