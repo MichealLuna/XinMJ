@@ -3,7 +3,7 @@
 1. directories location:
 > xin
 >> -base
->> -net
+    >> -net
 
 2. self-namespace xin
 3. self-macro name XINMJ
