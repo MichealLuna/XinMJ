@@ -1,9 +1,9 @@
 # Date 2024/6/10
-Self Library for Linux
-directories location:
+## Self Library for Linux
+1. directories location:
  xin
     -base
     -net
 
-# self-namespace xin
-# self-macro name XINMJ
+2. self-namespace xin
+3. self-macro name XINMJ
